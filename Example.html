@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo網頁</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .main-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .main-button {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .sub-buttons-container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .sub-buttons-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .sub-button-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .sub-button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .content-card {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* 主按鈕顏色 */
+        .heart-button { background-color: #ef4444; }
+        .heart-button:hover { background-color: #dc2626; }
+        .star-button { background-color: #eab308; }
+        .star-button:hover { background-color: #ca8a04; }
+        .sun-button { background-color: #f97316; }
+        .sun-button:hover { background-color: #ea580c; }
+        .moon-button { background-color: #8b5cf6; }
+        .moon-button:hover { background-color: #7c3aed; }
+        .cloud-button { background-color: #3b82f6; }
+        .cloud-button:hover { background-color: #2563eb; }
+        .rainbow-button { background-color: #22c55e; }
+        .rainbow-button:hover { background-color: #16a34a; }
+
+        /* 子按鈕顏色 - 愛心系列示例 */
+        .heart-sub-1 { background-color: #fca5a5; }
+        .heart-sub-2 { background-color: #f87171; }
+        .heart-sub-3 { background-color: #ef4444; }
+        .heart-sub-4 { background-color: #dc2626; }
+        .heart-sub-5 { background-color: #b91c1c; }
+        .heart-sub-6 { background-color: #991b1b; }
+
+        /* 表格樣式 */
+        .demo-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .demo-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-buttons">
+            <button class="main-button heart-button" data-type="heart">
+                ❤️ 愛心
+            </button>
+            <button class="main-button star-button" data-type="star">
+                ⭐ 星星
+            </button>
+            <button class="main-button sun-button" data-type="sun">
+                ☀️ 太陽
+            </button>
+            <button class="main-button moon-button" data-type="moon">
+                🌙 月亮
+            </button>
+            <button class="main-button cloud-button" data-type="cloud">
+                ☁️ 雲朵
+            </button>
+            <button class="main-button rainbow-button" data-type="rainbow">
+                🌈 彩虹
+            </button>
+        </div>
+
+        <div id="heartButtons" class="sub-buttons-container">
+            <div class="sub-buttons-grid">
+                <div class="sub-button-wrapper">
+                    <button class="sub-button heart-sub-1">愛心1</button>
+                    <div class="content-card">
+                        <div style="font-size: 24px; color: #ef4444; text-align: center;">
+                            I Love You ❤️
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-button-wrapper">
+                    <button class="sub-button heart-sub-2">愛心2</button>
+                    <div class="content-card">
+                        <table class="demo-table">
+                            <tbody>
+                                <tr>
+                                    <td>1-1</td>
+                                    <td>1-2</td>
+                                    <td>1-3</td>
+                                </tr>
+                                <tr>
+                                    <td>2-1</td>
+                                    <td>2-2</td>
+                                    <td>2-3</td>
+                                </tr>
+                                <tr>
+                                    <td>3-1</td>
+                                    <td>3-2</td>
+                                    <td>3-3</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 其他愛心按鈕 -->
+                <div class="sub-button-wrapper">
+                    <button class="sub-button heart-sub-3">愛心3</button>
+                    <div class="content-card">愛心3的內容</div>
+                </div>
+                <div class="sub-button-wrapper">
+                    <button class="sub-button heart-sub-4">愛心4</button>
+                    <div class="content-card">愛心4的內容</div>
+                </div>
+                <div class="sub-button-wrapper">
+                    <button class="sub-button heart-sub-5">愛心5</button>
+                    <div class="content-card">愛心5的內容</div>
+                </div>
+                <div class="sub-button-wrapper">
+                    <button class="sub-button heart-sub-6">愛心6</button>
+                    <div class="content-card">愛心6的內容</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 主按鈕點擊事件
+        document.querySelectorAll('.main-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // 隱藏所有子按鈕容器
+                document.querySelectorAll('.sub-buttons-container').forEach(container => {
+                    container.style.display = 'none';
+                });
+                
+                // 顯示對應的子按鈕容器
+                const type = this.dataset.type;
+                const subContainer = document.getElementById(type + 'Buttons');
+                if (subContainer) {
+                    subContainer.style.display = 
+                        subContainer.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+
+        // 子按鈕點擊事件
+        document.querySelectorAll('.sub-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // 找到對應的內容卡片
+                const content = this.parentElement.querySelector('.content-card');
+                if (content) {
+                    content.style.display = 
+                        content.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
